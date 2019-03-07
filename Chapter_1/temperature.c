@@ -2,6 +2,7 @@
 
 /* print Fahrenheit-Celsius table
     for fahr = 0, 20, ..., 300*/
+int temperature_converter(int t);
 
 int main(){
     int fahr, celsius;
@@ -13,8 +14,13 @@ int main(){
 
     fahr = lower;
     while (fahr <= upper) {
-        celsius = 5* (fahr-32) /9;
+        celsius = temperature_converter(fahr);
         printf("%d\t%d\n", fahr, celsius);
         fahr = fahr + step;
     }
+}
+
+//fahr to celsius
+int temperature_converter(int t){
+    return 5 * (t-32)/9;
 }
