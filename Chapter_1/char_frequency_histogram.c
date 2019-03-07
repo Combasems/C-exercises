@@ -12,10 +12,11 @@ int main(void){
 
 
     //grabs char and increments entry in array
-    c = getchar();
-    while((c >= FIRST_GRAPH_CHAR  && c <= LAST_GRAPH_CHAR)){
-        ++charArray[c-30];
-        c = getchar();
+    while((c = getchar()) != EOF){
+        if (c >= FIRST_GRAPH_CHAR && c <= LAST_GRAPH_CHAR) {
+            ++charArray[c - 30];
+        }
+        
     }
 
     printf("Char Frequency Histogram by char number\n");
